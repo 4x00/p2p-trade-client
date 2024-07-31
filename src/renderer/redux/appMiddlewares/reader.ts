@@ -53,6 +53,7 @@ export const reader: Middleware<object, AppState> = (store) => {
         tryToAckRead();
       });
   };
+  updatePendingAcks();
 
   return (next) => (action) => {
     const result = next(action);

@@ -43,6 +43,7 @@ export const acker: Middleware<object, AppState> = (store) => {
         tryToAck();
       });
   };
+  updatePendingAcks();
 
   return (next) => (action) => {
     const result = next(action);
