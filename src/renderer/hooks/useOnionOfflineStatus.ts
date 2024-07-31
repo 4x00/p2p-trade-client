@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { createCancelablePromise } from '../utils/createCancelablePromise';
 import { useRefresher } from './useRefresher';
-import * as offlineStatuses from '../utils/offlineStatuses';
+import * as offlineStatuses from '../utils/offlineStatusCache';
 import { sendDebouncedRUOK } from '../utils/sendDebouncedRUOK';
 
 type UseOnionOfflineStatus = (hostname: string) => boolean | undefined;

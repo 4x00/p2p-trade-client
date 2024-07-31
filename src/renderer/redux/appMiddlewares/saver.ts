@@ -1,6 +1,6 @@
 import { Middleware } from '@reduxjs/toolkit';
 import { AppState } from '../../types/AppState';
-import * as storage from '../../utils/storage';
+import * as storage from '../../utils/stateStorage';
 
 export const saver: Middleware<object, AppState> = (store) => (next) => (action) => {
   const result = next(action);
