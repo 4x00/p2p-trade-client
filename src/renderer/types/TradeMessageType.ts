@@ -1,0 +1,11 @@
+export enum TradeMessageType {
+  JOINED = 'JOINED',
+  TEXT = 'TEXT',
+  IMAGE = 'IMAGE',
+  // ...
+  //SPEND_POLL = 'SPEND_POLL',
+  //SPEND_POLL_VOTE = 'SPEND_POLL_VOTE',
+  //MULTISIG_SETUP_1 = 'MULTISIG_SETUP_1',
+  //MULTISIG_SETUP_2 = 'MULTISIG_SETUP_2',
+  //PAID = 'PAID',
+}

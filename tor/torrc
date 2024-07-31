@@ -1,0 +1,12 @@
+DataDirectory ./tor/data
+
+HiddenServiceDir ./tor/my-hidden-service
+HiddenServicePort 80 30380
+HiddenServiceDir ./tor/onion-1
+HiddenServicePort 80 30381
+HiddenServiceDir ./tor/onion-2
+HiddenServicePort 80 30382
+HiddenServiceDir ./tor/onion-3
+HiddenServicePort 80 30383
+
+SocksPort 30350

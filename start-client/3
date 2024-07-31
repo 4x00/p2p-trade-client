@@ -1,0 +1,5 @@
+electron-forge start -- \
+  --onion-path=./tor/onion-3 \
+  --user-data-path=./user-data/3 \
+  --server-port=30383 \
+  --instance=3

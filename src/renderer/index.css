@@ -1,0 +1,211 @@
+html {
+  height: 100%;
+}
+
+body {
+  height: 100%;
+  margin: 0;
+  font-family: monospace;
+  font-size: 14px;
+}
+
+table {
+  border-collapse: collapse;
+  font-size: 12px;
+}
+th {
+  border: 1px solid black;
+  white-space: pre;
+  padding: 0.25em;
+}
+td {
+  border: 1px solid black;
+  text-align: center;
+  white-space: pre;
+  padding: 0.25em;
+}
+hr {
+  border-color: black;
+}
+input {
+  font-family: monospace;
+}
+button {
+  font-family: monospace;
+}
+select {
+  font-family: monospace;
+}
+label {
+  width: 78px;
+  display: inline-block;
+}
+textarea {
+  resize: none;
+}
+pre {
+  margin: 0;
+}
+
+
+#app {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+#myOnion {
+  margin-top: auto;
+  padding: 0.5em;
+}
+#partyOnions {
+  margin-top: auto;
+  padding: 0.5em;
+}
+#partyOnions span {
+  display: inline-block;
+  width: 100px;
+}
+#nav { padding: 0.5em; }
+#myTradesTable {
+  margin: 0.5em;
+}
+#createTradeForm { padding: 0.5em; }
+#createTradePopup { padding: 1em; background: white; }
+#joinTradePopup { padding: 1em; background: white; }
+#joinRequestPopup { padding: 1em; background: white; }
+#joinRequestPopup label {
+  display: inline-block;
+  width: 100px;
+}
+#joinTradeSearch { padding: 0.5em; }
+#joinTradeForm { padding: 0.5em; }
+#myTradeForm {
+  padding: 0.5em;
+}
+#myTradeChat {
+  width: 400px;
+}
+#myTradeChatMessages {
+  border: 1px solid black;
+  height: 400px;
+  margin-bottom: 0.5em;
+  display: flex;
+  flex-direction: column;
+  padding: 0.5em;
+  overflow-y: auto;
+}
+#myTradeChatMessages > .chat-message {
+  margin: 0.5em;
+  padding: 1em;
+  border-radius: 1em;
+  background-color: #bbb;
+}
+#myTradeChatMessages .text-message {
+  color: #fff;
+  font-weight: bold;
+}
+#myTradeChatMessages .image-message {
+  cursor: pointer;
+}
+#myTradeChatMessages .image-message img {
+  height: 10em;
+  display: block;
+}
+#myTradeChatMessages .my-message {
+  margin-right: auto;
+}
+#myTradeChatMessages .others-message {
+  margin-left: auto;
+}
+#myTradeTextInput {
+  margin-bottom: 0.5em;
+  min-width: 100%;
+  box-sizing: border-box;
+}
+#myTradeChat button {
+  margin-left: 0.5em;
+}
+
+
+
+.dummy {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.amount-input {
+  width: 100px;
+}
+
+.percent-input {
+  width: 60px;
+}
+
+.trade-url-input {
+  width: 820px;
+  box-sizing: border-box;
+}
+.hostname-input {
+  width: 560px;
+  box-sizing: border-box;
+}
+
+.xmr-address-input {
+  width: 800px;
+}
+
+.description-input {
+  min-width: 330px;
+  min-height: 200px;
+}
+
+.trade-type-select {
+  width: 65px;
+  box-sizing: border-box;
+}
+
+.currency-select {
+  width: 65px;
+}
+
+.loading {
+  padding: 0.5em;
+  font-size: 2em;
+}
+.not-found {
+  padding: 0.5em;
+  font-size: 2em;
+}
+.join-request-result {
+  padding: 0.5em;
+  font-size: 2em;
+}
+
+.popup {
+  position: fixed;
+  background-color: rgba(0.5, 0.5, 0.5, 0.85);
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.rows {
+  display: flex;
+  justify-content: space-between;
+}
+.rows-right {
+  display: flex;
+  justify-content: flex-end;
+}
+.center {
+  display: flex;
+  justify-content: center;
+}
+.hidden {
+  display: none;
+}
