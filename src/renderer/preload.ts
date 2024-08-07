@@ -12,7 +12,10 @@ import { PreparedMessage } from '../types/PreparedMessage';
 import { UnsignedMessage } from '../types/UnsignedMessage';
 
 interface ContextBridge2 extends ContextBridge {
-  exposeInMainWorld(apiKey: 'getMyOnionHostname', api: () => Promise<string>): void;
+  exposeInMainWorld(
+    apiKey: 'getMyOnionHostname',
+    api: () => Promise<string>
+  ): void;
   exposeInMainWorld(
     apiKey: 'fetchCurrencyPrices',
     api: () => Promise<CurrencyPriceMap>,

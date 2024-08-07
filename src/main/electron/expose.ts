@@ -16,6 +16,14 @@ interface IpcMain2 extends IpcMain {
     listener: (event: IpcMainEvent) => string,
   ): void;
   handle(
+    channel: 'fetchCurrencyPrices',
+    listener: (event: IpcMainEvent) => Promise<CurrencyPriceMap>,
+  ): void;
+  handle(
+    channel: 'sendQuery',
+    listener: (event: IpcMainEvent, url: string) => Promise<unknown>,
+  ): void;
+  handle(
     channel: 'signAndSendMyMessage',
     listener: (
       event: IpcMainEvent,
@@ -33,19 +41,12 @@ interface IpcMain2 extends IpcMain {
       message: PreparedMessage,
     ) => Promise<unknown>,
   ): void;
-  handle(
-    channel: 'sendQuery',
-    listener: (event: IpcMainEvent, url: string) => Promise<unknown>,
-  ): void;
-  handle(
-    channel: 'fetchCurrencyPrices',
-    listener: (event: IpcMainEvent) => Promise<CurrencyPriceMap>,
-  ): void;
 }
 const ipcMain2 = ipcMain as IpcMain2;
 
 export const expose = () => {
   ipcMain2.handle('getMyOnionHostname', () => getMyOnionHostname());
+  ipcMain2.handle('fetchCurrencyPrices', () => fetchCurrencyPrices());
   ipcMain2.handle('sendQuery', (_, url) => sendQuery(url));
   ipcMain2.handle(
     'signAndSendMyMessage',
@@ -59,5 +60,4 @@ export const expose = () => {
       sendMessage(hostname, unprepareMessage(tradeId, message))
     )
   );
-  ipcMain2.handle('fetchCurrencyPrices', () => fetchCurrencyPrices());
 };
