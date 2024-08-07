@@ -40,7 +40,7 @@ export interface JoinedMessageSource extends TradeMessageBase  {
     role: TradeRole;
     xmrAddress: string;
     xmrAmount?: number;
-    otherAmount?: number; // otherAmount is added here because a price-lock can be derived from it
+    otherAmount?: number; // otherAmount is added here because a price-lock point can be derived from it
   };
 }
 export type JoinedMessage = (
