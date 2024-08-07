@@ -5,6 +5,7 @@ import { CurrencyPriceMap } from '../../utils/fetchCurrencyPrices/types';
 import { MyTradeFormView } from '../types/MyTradeFormView';
 import { getMyRole } from '../memos/getMyRole';
 import { getFixedAmount } from './getFixedAmount';
+import { getTradeCreatorHostname } from './getTradeCreatorHostname';
 
 const NAN_MINMAX = { min: '-', max: '-' };
 type CalcMyTradeFormView = (
@@ -25,6 +26,7 @@ export const calcMyTradeFormView: CalcMyTradeFormView = (
     const formatXmr = (v: number) => formatCurrency(v, 'xmr');
     const formatOther = (v: number) => formatCurrency(v, currency);
     const fixedAmount = getFixedAmount(trade);
+    const tradeCreatorHostname = getTradeCreatorHostname(trade, myOnionHostname) ?? '';
 
     const hasMoneroMinMax = Boolean(details.monero.min && details.monero.max);
     const hasOtherMinMax = Boolean(details.other.min && details.other.max);
@@ -40,7 +42,7 @@ export const calcMyTradeFormView: CalcMyTradeFormView = (
     );
 
     return {
-      url: `${myOnionHostname}/trades/${details.id}`,
+      url: `${tradeCreatorHostname}/trades/${details.id}`,
       id: details.id,
       status: TradeStatus.AWAITING_PARTIES,
       myRole: getMyRole(trade),

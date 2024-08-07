@@ -2,8 +2,8 @@ import { formatCurrency } from '../utils/formatCurrency';
 import { JoinTradeFormView } from '../types/JoinTradeFormView';
 import { JoinTradeDetails } from '../types/JoinTradeDetails';
 
-type CalcMyTradeFormView = (trade: JoinTradeDetails) => JoinTradeFormView;
-export const calcJoinTradeFormView: CalcMyTradeFormView = (
+type CalcJoinTradeFormView = (trade: JoinTradeDetails) => JoinTradeFormView;
+export const calcJoinTradeFormView: CalcJoinTradeFormView = (
   (joinDetails) => {
     const currency = joinDetails.other.currency;
     const formatXmr = (v: number) => formatCurrency(v, 'xmr');
