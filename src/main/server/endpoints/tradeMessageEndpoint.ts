@@ -20,7 +20,7 @@ export const tradeMessageEndpoint: TradeMessageEndpoint = async (req, res, bridg
     const [ result ] = await bridge.sendAndAwaitReply('tradeMessage', ...prepareMessage(message));
     res.end(JSON.stringify(result));
   } else {
-    console.log('got bad sig for', message);
+    console.log('Got bad sig for', message);
     res.end(JSON.stringify('badsig'));
   }
 };
